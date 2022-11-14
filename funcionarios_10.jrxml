@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="funcionarios_07" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="596e01a2-4e98-42f5-a153-7e3440fe1360">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="funcionarios_10" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="596e01a2-4e98-42f5-a153-7e3440fe1360">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mysql-jaspercourse"/>
 	<property name="com.jaspersoft.studio.data.sql.tables">
 		<![CDATA[amFzcGVyY3Vyc28uZW1wcmVzYXMgQVMgLDE5LDE0LGQ4MGU1OWRlLWYxODYtNDdlYi1iMjczLTg0
@@ -22,10 +22,10 @@ MjcsOWUxNTRhMzMtMzRjYy00YmIxLTg4OTQtNmMwNGY1NzE4NjM3Ow==]]>
 		<pen lineWidth="1.0" lineColor="#E8E8E8"/>
 		<box leftPadding="5" rightPadding="5">
 			<pen lineWidth="1.0" lineColor="#D6D6D6"/>
-			<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#D6D6D6"/>
-			<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#D6D6D6"/>
-			<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#D6D6D6"/>
-			<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#D6D6D6"/>
+			<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 		</box>
 		<conditionalStyle>
 			<conditionExpression><![CDATA[$V{COLUMN_COUNT} % 2 == 0]]></conditionExpression>
@@ -141,10 +141,14 @@ FROM jaspercurso.empresas,
 				<text><![CDATA[Nome Completo]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="estilo_cabecalho" x="329" y="0" width="473" height="30" uuid="84c4b2b7-809e-43d5-8809-96fccda863f7">
+				<reportElement style="estilo_cabecalho" x="530" y="0" width="272" height="30" uuid="84c4b2b7-809e-43d5-8809-96fccda863f7">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a8f75541-6cea-4c16-9481-7323d2bef25d"/>
 				</reportElement>
 				<text><![CDATA[Endereço Residencial]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="estilo_cabecalho" x="329" y="0" width="201" height="30" uuid="aaba79bb-ae33-4bd5-b63e-c521781c17de"/>
+				<text><![CDATA[Telefone]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
@@ -152,24 +156,34 @@ FROM jaspercurso.empresas,
 		<band height="29" splitType="Stretch">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
 			<textField>
-				<reportElement style="estilo_corpo" mode="Opaque" x="0" y="0" width="129" height="29" uuid="edf14674-134b-4167-b966-f195eb63234b">
+				<reportElement style="estilo_corpo" stretchType="ContainerHeight" mode="Opaque" x="0" y="0" width="129" height="29" uuid="edf14674-134b-4167-b966-f195eb63234b">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f4bb7a71-b04a-40e8-b9c4-e17e4faa0cd3"/>
 				</reportElement>
-				<textElement textAlignment="Center"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{id_funcionario}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="estilo_corpo" mode="Opaque" x="129" y="0" width="200" height="29" uuid="47e79bb5-a644-4861-ba31-7b2dedef2d92">
+				<reportElement style="estilo_corpo" stretchType="ContainerHeight" mode="Opaque" x="129" y="0" width="200" height="29" uuid="47e79bb5-a644-4861-ba31-7b2dedef2d92">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bba3b634-e500-4a9e-b9bd-f1acf0edd28c"/>
 				</reportElement>
+				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="estilo_corpo" mode="Opaque" x="329" y="0" width="473" height="29" uuid="f109ccd2-3884-40b9-a7a8-346032ce5cef">
+				<reportElement style="estilo_corpo" stretchType="ContainerHeight" mode="Opaque" x="530" y="0" width="272" height="29" uuid="f109ccd2-3884-40b9-a7a8-346032ce5cef">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a8f75541-6cea-4c16-9481-7323d2bef25d"/>
 				</reportElement>
+				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{endereco}]]></textFieldExpression>
 			</textField>
+			<subreport>
+				<reportElement style="estilo_corpo" stretchType="ContainerHeight" x="329" y="0" width="201" height="29" uuid="69918d94-42df-4ff0-afe5-4d0751b9d1ad"/>
+				<subreportParameter name="ID_FUNCIONARIO">
+					<subreportParameterExpression><![CDATA[$F{id_funcionario}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["funcionraios_10_subreport.jasper"]]></subreportExpression>
+			</subreport>
 		</band>
 	</detail>
 	<columnFooter>

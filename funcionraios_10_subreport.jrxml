@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="funcionrios_10_subreport" pageWidth="180" pageHeight="30" columnWidth="180" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="faf9a26e-8368-4c30-82a4-9421039bb689">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mysql-jaspercourse"/>
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[amFzcGVyY3Vyc28udGVsZWZvbmVzICwxNSwxNSxmNjA1ZGE0NS1mODgwLTQzOWUtODI3YS1kZDc0
+NzRhYTU5NTk7]]>
+	</property>
+	<parameter name="ID_FUNCIONARIO" class="java.lang.Long"/>
+	<queryString>
+		<![CDATA[SELECT numero,
+	tipo_fone,
+	id_funcionario
+FROM jaspercurso.telefones
+WHERE 	id_funcionario =  $P{ID_FUNCIONARIO} ]]>
+	</queryString>
+	<field name="numero" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="numero"/>
+		<property name="com.jaspersoft.studio.field.label" value="numero"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="telefones"/>
+	</field>
+	<field name="tipo_fone" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="tipo_fone"/>
+		<property name="com.jaspersoft.studio.field.label" value="tipo_fone"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="telefones"/>
+	</field>
+	<field name="id_funcionario" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="id_funcionario"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_funcionario"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="telefones"/>
+	</field>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement x="90" y="0" width="90" height="30" uuid="f3dd0a1f-68cf-47ee-bb59-51a05ce76f6f"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{numero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="90" height="30" uuid="b47cf6c4-ac68-4068-bbff-65ac1975c3d0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tipo_fone}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
